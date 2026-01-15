@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OS Redirect</title>
+    <script>
+        (function () {
+            var userAgent = navigator.userAgent || navigator.platform || '';
+
+            // ChromeOS user agents usually contain "CrOS"
+            var isChromeOS = userAgent.indexOf('CrOS') !== -1;
+
+            if (isChromeOS) {
+                // Redirect ChromeOS users
+                window.location.href = "https://site2.com";
+            } else {
+                // Redirect everyone else
+                window.location.href = "https://site1.com";
+            }
+        })();
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
